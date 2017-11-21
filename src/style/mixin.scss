@@ -1,0 +1,14 @@
+$blue: #3190e8;
+
+//字体大小，颜色
+@mixin fsc($size, $color){
+  font-size:$size;
+  color: $color;
+};
+
+//宽高
+@mixin wh($width, $height) {
+  width: $width;
+height: $height;
+}
+
