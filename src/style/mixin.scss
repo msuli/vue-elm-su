@@ -1,6 +1,7 @@
 $blue: #3190e8;
 $bordercolor: #e4e4e4;
 $white: #fff;
+$successbutton: #53d869;
 
 //字体大小，颜色
 @mixin fsc($size, $color){
@@ -26,4 +27,9 @@ $white: #fff;
   position: absolute;
   left:50%;
   transform:translateX(-50%);
+}
+.ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

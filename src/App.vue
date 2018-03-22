@@ -1,20 +1,38 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div>
+    <transition name="router-fade" mode="out-in">
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+  </transition>
+    <transition name="router-fade" mode="out-in">
+      <keep-alive>
+        <router-view v-if="!$route.meta.keepAlive"></router-view>
+      </keep-alive>
+    </transition>
+    <!--<svg-icon></svg-icon>-->
   </div>
 </template>
 
 <script>
-  import Header from './components/header/Header.vue';
+  //import svgIcon from './components/common/svg';
 export default {
-  name: 'app',
   components: {
-      appHeader: Header
+    //  svgIcon
   }
 }
 </script>
 
 <style lang="scss">
 @import "./style/common";
-
+.router-fade-enter-active,.router-fade-leave-active{
+  -webkit-transition: opacity .3s;
+  -moz-transition: opacity .3s;
+  -ms-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
+}
+  .router-fade-enter,.router-fade-leave-active{
+    opacity:0;
+  }
 </style>

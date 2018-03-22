@@ -9,7 +9,7 @@ body, div, span, a, p, ul, li, ol, section, article, aside, dl, dt, dd,h1, h2, h
  h4, h5, h6, header, footer, input, select, button, i, figure, figcaption{
   margin:0;
   padding:0;
-  font-family: 'Microsoft YaHei';
+  font-family: 'Microsoft YaHei, PingFang SC';
   border:none;
   text-decoration: none;
   color: #333;
@@ -27,4 +27,24 @@ body, div, span, a, p, ul, li, ol, section, article, aside, dl, dt, dd,h1, h2, h
   content: '';
   clear: both;
   display: block;
+}
+.clear{
+  zoom: 1;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.ellipse{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

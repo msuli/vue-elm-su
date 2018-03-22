@@ -1,9 +1,10 @@
+import App from '../App';
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Home = r => {
+const home = r => {
   require.ensure(['../page/home/home'], ()=>{
-    r(require('../page/home/Home'));
+    r(require('../page/home/home'));
   })
 };
 
@@ -14,22 +15,23 @@ const login = resolve => {
 };
 
 const city = resolve => {
-  require.ensure([], ()=>{
+  require.ensure(['../page/city/city'], ()=>{
     resolve(require('../page/city/city'));
   })
 };
 
-const Msite = resolve => {
-  require.ensure([], () => {
+const msite = resolve => {
+  require.ensure(['../page/msite/msite'], () => {
     resolve(require('../page/msite/msite'));
   })
-}
+};
+const food = r => require.ensure([], () => r(require('../page/food/food')), 'food')
 
 Vue.use(Router)
 
 export default[{
   path: '/',
-  component: 'App', //顶层路由，对应index.html
+  component: App, //顶层路由，对应index.html
   children: [
     {
       path: '',
@@ -46,14 +48,19 @@ export default[{
     },
     //当前选择城市页
     {
-      path: '/city/:cityId',
-      component: City
+      path: '/city/:cityid',
+      component: city
     },
     //所有商铺列表页
     {
       path: '/msite',
       component: msite,
       meta: { keepAlive: true },
+    },
+    //特色商铺列表
+    {
+      path: '/food',
+      component: food,
     },
   ]
 }]

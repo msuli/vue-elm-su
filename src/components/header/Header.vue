@@ -37,6 +37,7 @@
     left:0;
     @include wh(100%, 2.5rem);
     background: $blue;
+    z-index: 2;
   }
 .head-login{
   position: absolute;
@@ -45,7 +46,7 @@
   right: 0.9rem;
   text-decoration: none;
   span {
-    @include fsc(0.9rem, #fff);
+    @include fsc(0.65rem, #fff);
   }
 }
   .head-goback{
@@ -59,7 +60,7 @@
     text-align: center;
     line-height: 2.5rem;
     .title-text{
-      @include fsc(0.9rem, $white);
+      @include fsc(0.7rem, $white);
       font-weight:800;
     }
   }
