@@ -21,8 +21,7 @@
       } ,600)
     },
     beforeDestroy(){
-        clearInterval(this.timer);
-        console.log(1)
+      clearInterval(this.timer);
     }
   }
 </script>

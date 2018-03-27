@@ -25,7 +25,8 @@ const msite = resolve => {
     resolve(require('../page/msite/msite'));
   })
 };
-const food = r => require.ensure([], () => r(require('../page/food/food')), 'food')
+const food = r => require.ensure([], () => r(require('../page/food/food')), 'food');
+const shop = r => require.ensure([], () => r(require('../page/shop/shop')), 'shop');
 
 Vue.use(Router)
 
@@ -61,6 +62,11 @@ export default[{
     {
       path: '/food',
       component: food,
+    },
+    //商铺详情页
+    {
+      path: '/shop',
+      component: shop,
     },
   ]
 }]
