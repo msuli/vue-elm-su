@@ -246,19 +246,21 @@
         let result = [];
         let cartList = this.shopCart;
         console.log('重新计算', result);
+        console.log('重新计算1', cartList);
         cartList.forEach(function (item, index) {
           let f = false;
+          console.log('item.num', item.num);
           result.forEach(function (r, i) {
             if (item.categoryId === r.categoryId) {
-              r.num += item.num;
-              f = true;
+               r.num += item.num;
             }
+
           })
           if (!f) {
             result.push(item);
           }
         })
-        console.log('重新计算', result);
+        console.log('重新计算2', result);
         return result;
       }
     },

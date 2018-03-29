@@ -69,6 +69,7 @@
           };
 
         this.ADD_CART(addFood);
+        this.$emit('addCart', obj);
       },
       removeOutCart(food){
         let obj = {};

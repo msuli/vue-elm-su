@@ -41,7 +41,7 @@ export default {
         }
       }
     })
-    state.cartList = {...cartList};
+    state.cartList = [...cartList];
     console.log('cartList', state.cartList)
     setStore('cartList', state.cartList);
   }
