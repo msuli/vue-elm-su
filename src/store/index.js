@@ -9,6 +9,7 @@ Vue.use(Vuex);
   latitude: '',  //当前位置纬度
   longitude: '',   //当前位置经度
   geohash: 'wtw3sm0q087',//地址geohash值,用一个字符串表示经度和纬度两个坐标
+   cartList: [],  //加入购物车的商品列表
 }
 export default new Vuex.Store({
   state, mutations, action

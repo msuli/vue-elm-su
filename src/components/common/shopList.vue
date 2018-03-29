@@ -24,7 +24,8 @@
                   <span  class="order-section">月销{{item.recent_order_num}}单</span>
                 </div>
                 <div class="rating-order-num-right">
-                  <span class="delivery-style delivery-left">{{item.delivery_mode.text}}</span>
+                  <span class="delivery-style delivery-left">2222</span>
+                  <!--{{item.delivery_mode.text}}-->
                   <span class="delivery-style delivery-right">准时达</span>
                 </div>
               </div>
