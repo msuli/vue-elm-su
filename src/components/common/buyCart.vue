@@ -35,10 +35,12 @@
       //shopCart变化的时候重新计算当前商品的数量
       foodNum(){
         let num = 0;
-        let categoryId = this.food.category_id;
-        let itemId = this.food.item_id;
+        let food={...this.food}
+        let categoryId = food.category_id;
+        let itemId = food.item_id;
         //console.log('123', this.cartList);
-       this.shopCart.forEach((item, index) => {
+        let shopCart = [...this.shopCart];
+       shopCart.forEach((item, index) => {
            if(item.categoryId == categoryId && item.itemId == itemId){
                num += item.num;
            }
@@ -69,7 +71,6 @@
           };
 
         this.ADD_CART(addFood);
-        this.$emit('addCart', obj);
       },
       removeOutCart(food){
         let obj = {};

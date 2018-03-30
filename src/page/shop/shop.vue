@@ -37,7 +37,7 @@
                 :class="{'active': currentIndex === index}"
             >
               {{item.name}}
-              <!--<span v-for="(catNum, catNumIndex) in categoryNum" v-if="catNum.categoryId==item.foods[0].category_id">{{catNum.num}}</span>-->
+              <span v-for="(catNum, catNumIndex) in categoryNum" v-if="catNum.categoryId==item.foods[0].category_id">{{catNum.num}}</span>
             </li>
           </ul>
         </div>
@@ -245,22 +245,18 @@
       categoryNum(){
         let result = [];
         let cartList = this.shopCart;
-        console.log('重新计算', result);
-        console.log('重新计算1', cartList);
         cartList.forEach(function (item, index) {
           let f = false;
-          console.log('item.num', item.num);
           result.forEach(function (r, i) {
-            if (item.categoryId === r.categoryId) {
+            if (item.categoryId == r.categoryId) {
                r.num += item.num;
+               f = true;
             }
-
           })
           if (!f) {
-            result.push(item);
+            result.push({categoryId: item.categoryId, num:item.num});
           }
         })
-        console.log('重新计算2', result);
         return result;
       }
     },
@@ -388,19 +384,22 @@
           }
         }, option.interval)
       },
+      //控制选择规格列表的显示与隐藏
       chooseList(food){
-          console.log('执行了');
           if(food){
               this.chooseFood = food;
           }
           this.showSpecification = !this.showSpecification;
       },
+      //关闭选择规格的列表
       closeChoose(bool){
         this.showSpecification = bool;
       },
+      //选择的第几个规格
       chooseSpec(index){
           this.chooseIndex = index;
       },
+      //添加到购物车
       addToCart(shopId, obj){
         obj.shopId = shopId;
         console.log('food', obj);

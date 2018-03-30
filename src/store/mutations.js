@@ -16,7 +16,7 @@ export default {
   ADD_CART(state, obj){
     console.log('obj', obj);
     console.log('shopId', 1);
-    let cartList = state.cartList;
+    let cartList = [...state.cartList];
     let flag = false;
     cartList.forEach((item, index) => {
       if(item.foodId === obj.foodId){
