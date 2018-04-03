@@ -54,7 +54,6 @@
       ]),
       addToCart(shopId, obj){
         obj.shopId = shopId;
-          console.log('food', obj);
           let addFood = {
             shopId: obj.shopId,
             num : 1,
@@ -81,11 +80,10 @@
         this.REDUCE_CART(obj);
       },
       clickSpecification(food){
-          console.log(123, food);
           this.$emit('showSpec', food);
       },
+      //多规格的减的事件
       reduceSpec(){
-          console.log('多规格商品，只能去购物车删除');
           this.notReduce = true;
           setTimeout(()=>{
             this.notReduce = false;
